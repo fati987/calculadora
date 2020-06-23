@@ -9,15 +9,15 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private  string number ="";
+    private  String number = "";
     public double num1 = 0;
-    private doubble num2 = 0;
-    protected String symbol;
+    private double num2 = 0;
+    protected String symbol = "";
 
 
     private TextView solucion;
-    private Button keyPad5, keyPad8, keyPad3, keyPaddos,
-    private Button keyPadSum, keyPadSubstract, keyPadMultiply, keyPadEqual, equal;
+    private Button Key_Pad0, Key_Pad1, Key_Pad2, Key_Pad3, Key_Pad4, Key_Pad5, Key_Pad6, Key_Pad7, Key_Pad8, Key_Pad9;
+    private Button Key_Padsuma, Key_Padresta, Key_Padmulti, Key_Paddiv, Key_Padborrar, Key_Padigual;
 
 
     @Override
@@ -28,21 +28,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         solucion =  findViewById(R.id.solucion);
 
-        keyPad5 = findViewById(R.id.num_cuatro);
-        keyPad2 = findViewById(R.id.num_dos);
+        Key_Pad0 = findViewById(R.id.num_cero);
+        Key_Pad1 = findViewById(R.id.num_uno);
+        Key_Pad2 = findViewById(R.id.num_dos);
+        Key_Pad3 = findViewById(R.id.num_tres);
+        Key_Pad4 = findViewById(R.id.num_cuatro);
+        Key_Pad5 = findViewById(R.id.num_cinco);
+        Key_Pad6 = findViewById(R.id.num_seis);
+        Key_Pad7 = findViewById(R.id.num_siete);
+        Key_Pad8 = findViewById(R.id.num_ocho);
+        Key_Pad9 = findViewById(R.id.num_nueve);
 
 
-        keyPadSum = findViewById(R.id.sum);
-        keyPadSubstract = findViewById(R.id.division);
+        Key_Padsuma = findViewById(R.id.num_suma);
+        Key_Padresta = findViewById(R.id.num_resta);
+        Key_Padmulti = findViewById(R.id.num_multi);
+        Key_Paddiv = findViewById(R.id.num_div);
+        Key_Padborrar = findViewById(R.id.num_borrar);
+        Key_Padigual = findViewById(R.id.num_igual);
 
         //listener for button
 
-        keyPad5.setOnClickListener(this);
-        keyPad2.setOnClickListener(this);
+        Key_Pad0.setOnClickListener(this);
+        Key_Pad1.setOnClickListener(this);
+        Key_Pad2.setOnClickListener(this);
+        Key_Pad3.setOnClickListener(this);
+        Key_Pad4.setOnClickListener(this);
+        Key_Pad5.setOnClickListener(this);
+        Key_Pad6.setOnClickListener(this);
+        Key_Pad7.setOnClickListener(this);
+        Key_Pad8.setOnClickListener(this);
+        Key_Pad9.setOnClickListener(this);
 
 
-        keyPadSum.setOnClickListener(this);
-        keyPadSubstract.setOnClickListener(this);
+        Key_Padsuma.setOnClickListener(this);
+        Key_Padresta.setOnClickListener(this);
+        Key_Padmulti.setOnClickListener(this);
+        Key_Paddiv.setOnClickListener(this);
+        Key_Padborrar.setOnClickListener(this);
+        Key_Padigual.setOnClickListener(this);
 
     }
 
@@ -100,36 +124,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 solucion.setText(number);
                 break;
 
-            case R.id.sum:
+            case R.id.num_suma:
                 symbol = "+";
                 num1 = Integer.parseInt(number);
                 number = "";
                 break;
 
-            case R.id.substract:
+            case R.id.num_resta:
                 symbol = "-";
                 num1 = Integer.parseInt(number);
                 number = "";
                 break;
 
-            case R.id.division:
+            case R.id.num_div:
                 symbol = "/";
                 num1 = Integer.parseInt(number);
                 number = "";
                 break;
 
-            case R.id.multiply:
-                symbol = "X";
+            case R.id.num_multi:
+                symbol = "*";
                 num1 = Integer.parseInt(number);
                 number = "";
                 break;
 
-            case R.id.equal:
+            case R.id.num_igual:
                 num2 = Integer.parseInt(number);
-
                 switch (symbol){
                     case "+":
-                        solucion.setText( (num1 + num2));
+                        solucion.setText("solucion" + (num1 + num2));
                         break;
                     case "-":
                         solucion.setText("solucion: " + (num1 - num2));
@@ -137,18 +160,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case "/":
                         solucion.setText("solucion: " + (num1 / num2));
                         break;
-                    case "X":
+                    case "*":
                         solucion.setText("solucion: " + (num1 * num2));
                         break;
                 }
-
                 num1 = 0;
                 num2 = 0;
                 number = "";
-
                 break;
 
-            case R.id.CE:
+            case R.id.num_borrar:
                 symbol = "";
                 num1 = 0;
                 num2 = 0;
