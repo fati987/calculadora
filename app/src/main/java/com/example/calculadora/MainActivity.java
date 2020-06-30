@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.num_dos:
-                number = number + "";
+                number = number + "2";
                 solucion.setText(number);
                 break;
 
